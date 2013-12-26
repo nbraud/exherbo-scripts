@@ -17,7 +17,8 @@ Mirrors entries that do not contain any valid host are not output
 
 # Licensing
 
-This is all distributed under the [ISC license](LICENSE.md), a free, open source
-and non-copyleft license, [equivalent to 2-clauses BSD][BSD2] but simpler.
+The content of this repository is distributed under the
+[ISC license](LICENSE.md), a free, open source and non-copyleft license,
+[equivalent to 2-clauses BSD][BSD2] but simpler.
 
 [BSD2]: http://www.openbsd.org/policy.html
