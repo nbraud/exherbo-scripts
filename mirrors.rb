@@ -13,15 +13,14 @@ def complain text
   $stderr.puts "    %s"%text
 end
 
-while !(line = gets).nil?
-  line = line.split
-  next if line.empty?
+while !(mirror = gets).nil?
+  mirror = mirror.split
+  next if mirror.empty?
 
-  name = line.shift
-  valid_hosts = []
+  name = mirror.shift
   @head = "Mirror '%s'"%name
 
-  line.each { |text|
+  mirror.select! { |text|
     uri = URI(text)
 
     if uri.host.nil?
@@ -31,13 +30,13 @@ while !(line = gets).nil?
     elsif Resolv.getaddresses(uri.host).empty?
       complain "Host '%s' doesn't resolve."%host
     else
-      valid_hosts << text
+      true
     end
   }
 
-  if valid_hosts.empty?
+  if mirror.empty?
     complain "'%s' has no valid host"%name
   else
-    puts "%s		%s"%[name, valid_hosts.join(' ')]
+    puts "%s		%s"%[name, mirror.join(' ')]
   end
 end
