@@ -13,9 +13,14 @@ def complain text
   $stderr.puts "    %s"%text
 end
 
-while !(mirror = gets).nil?
-  mirror = mirror.split
+while !(line = gets).nil?
+  mirror = line.split
   next if mirror.empty?
+
+  if mirror[0][0] == '#' #This line is a comment
+    puts line
+    next
+  end
 
   name = mirror.shift
   @head = "Mirror '%s'"%name
