@@ -33,7 +33,7 @@ while !(line = gets).nil?
     elsif !["http", "https", "ftp"].include?(uri.scheme)
       complain "URI '%s' uses an unsupported scheme"%text
     elsif Resolv.getaddresses(uri.host).empty?
-      complain "Host '%s' doesn't resolve."%host
+      complain "Host '%s' doesn't resolve"%host
     else
       true
     end
