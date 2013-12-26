@@ -24,11 +24,11 @@ while !(line = gets).nil?
   line.each { |text|
     uri = URI(text)
 
-    host = uri.host
-    complain "'%s' is too fishy (no host)"%text if host.nil?
-    next if host.nil?
-
-    if Resolv.getaddresses(host).empty?
+    if uri.host.nil?
+      complain "URI '%s' has no host"%text
+    elsif !["http", "https", "ftp"].include?(uri.scheme)
+      complain "URI '%s' uses an unsupported scheme"%text
+    elsif Resolv.getaddresses(uri.host).empty?
       complain "Host '%s' doesn't resolve."%host
     else
       valid_hosts << text
