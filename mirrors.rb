@@ -1,4 +1,7 @@
 #!/usr/bin/ruby
+# Copyright 2013 Nicolas Braud-Santoni <nicolas+exherbo@braud-santoni.eu>
+# Distributed under the terms of the ISC license
+
 require 'resolv'
 require 'uri'
 
