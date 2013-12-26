@@ -1,4 +1,4 @@
 * mirrors
-** TODO Fix the crash on last, empty line
-   Might want to gracefully handle comments in the file too
+** DONE Fix the crash on last, empty line
+** TODO Might want to gracefully handle comments in the file too
 ** TODO Check mirrors later to ignore transient failures

@@ -13,7 +13,8 @@ def complain text
   $stderr.puts "    %s"%text
 end
 
-while line = gets.split
+while !(line = gets).nil?
+  line = line.split
   next if line.empty?
 
   name = line.shift
